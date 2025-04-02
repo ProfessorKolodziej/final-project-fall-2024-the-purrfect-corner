@@ -1,33 +1,39 @@
-/*
-CSS controls the styling of the page.
-You can write a color in directly, or use variables.
-Try changing the color from blue to red in the
-primary color variable below.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Knewave&family=Rancho&display=swap');
 
-:root {
-	--color-primary: blue;
-	--color-secondary: #c00;
+* {
+	box-sizing: border-box;
 }
 
-/*
-CSS doesn't allow variables to be used in media
-queries just yet, but you can use these values
-to help you out.
+body {
+	background-color: #FFEBAE;
+}
 
-	--size-xs: 320px;
-	--size-sm: 480px;
-	--size-md: 768px;
-	--size-lg: 1024px;
-	--size-xl: 1200px;
-*/
+.welcome-page {
+	text-align: center;
+	width: 100%;
+}
 
 h1 {
+	font-family: rancho;
+	font-size: 50px;
+	align-items: center;
 	color: var(--color-primary);
 }
 
+h2 {
+	font-family: rancho;
+	font-size: 40px;
+}
+
+.welcome-cat {
+	max-width: 100%;
+	height: auto;
+	margin-top: -130px;
+
+}
+
 /* This uses the same value as --size-xs. */
-@media screen and (width >= 320px) {
+@media screen and (width >=320px) {
 	.content-container {
 		margin: 0 auto;
 		max-width: 768px;
