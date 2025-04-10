@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Knewave&family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -13,15 +14,21 @@ body {
 	width: 100%;
 }
 
+.welcome-heading {
+	display: block;
+	line-height: 1.2;
+
+}
+
 h1 {
-	font-family: rancho;
+	font-family: rancho, serif;
 	font-size: 50px;
 	align-items: center;
 	color: var(--color-primary);
 }
 
 h2 {
-	font-family: rancho;
+	font-family: rancho, serif;
 	font-size: 40px;
 }
 
@@ -32,10 +39,154 @@ h2 {
 
 }
 
-/* This uses the same value as --size-xs. */
-@media screen and (width >=320px) {
-	.content-container {
-		margin: 0 auto;
-		max-width: 768px;
+.site-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header-title {
+	font-family: rancho, serif;
+	font-size: 30px;
+}
+
+.about-button {
+	background-color: #9fadf5;
+	border: none;
+	border-radius: 30px;
+	padding: 8px 20px;
+	font-family: rancho, serif;
+	font-size: 23px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+}
+
+.about-button-cat {
+	width: 30px;
+	height: 30px;
+}
+
+.video-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+
+.mascot {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	width: 120px;
+}
+
+.control-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	position: fixed;
+	right: 30px;
+	top: 60%;
+}
+
+.control-buttons img {
+	width: 45px;
+	height: 45px;
+}
+
+.video-container {
+	width: 100%;
+	position: relative;
+	z-index: auto;
+	padding-bottom: 20px;
+	height: 0;
+	margin-bottom: 20px;
+}
+
+.about-page {
+	max-width 90%;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #FBEFEF;
+}
+
+.about-page p {
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	padding: 15px;
+}
+
+
+.cat-speaking {
+	position: relative;
+	bottom: -100px;
+	right: 100px;
+	max-width: 80%;
+	margin: 20px auto;
+}
+
+.speech-bubble {
+	position: relative;
+	left: -20%;
+	width: 100%;
+	max-width: 400px;
+	margin-left: 70px;
+	margin-bottom: 20px;
+}
+
+.speech-content {
+	position: absolute;
+	top: 0;
+	left: 50px;
+	width: 80%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10% 15%;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.speech-content p {
+	margin: 5px 0;
+	font-family: "Rancho", cursive, serif;
+	font-size: 17px;
+	line-height: 1.2;
+}
+
+/*.welcome-page,*/
+.about-page,
+.cat-speaking,
+.share,
+.video-container {
+	display: none;
+}
+
+
+@media (min-width:768px) {
+	.welcome-page {
+		text-align: left;
+		margin: 200px;
+	}
+
+	h1 {
+		font-size: 80px;
+	}
+
+	h2 {
+		font-size: 60px;
+	}
+
+	.welcome-cat {
+		max-width: 30%;
+		height: auto;
+		margin-top: -130px;
+
 	}
 }
+
+@media (min-width:1024px) {}
