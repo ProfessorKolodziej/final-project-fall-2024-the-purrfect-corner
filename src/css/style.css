@@ -51,7 +51,6 @@ h2 {
 
 .about-button {
 	background-color: #9fadf5;
-	border: none;
 	border-radius: 30px;
 	padding: 8px 20px;
 	font-family: rancho, serif;
@@ -59,26 +58,11 @@ h2 {
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	cursor: pointer;
 }
 
 .about-button-cat {
 	width: 30px;
 	height: 30px;
-}
-
-.video-container {
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
-
-
-.mascot {
-	position: fixed;
-	bottom: 20px;
-	left: 20px;
-	width: 120px;
 }
 
 .control-buttons {
@@ -100,8 +84,14 @@ h2 {
 	position: relative;
 	z-index: auto;
 	padding-bottom: 20px;
-	height: 0;
 	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+iframe {
+	height: 764px;
+	border: none;
 }
 
 .about-page {
@@ -111,6 +101,10 @@ h2 {
 	background-color: #FBEFEF;
 }
 
+.about-heading {
+	text-align: center;
+}
+
 .about-page p {
 	font-family: "Nunito", sans-serif;
 	font-weight: 400;
@@ -118,6 +112,13 @@ h2 {
 	padding: 15px;
 }
 
+.mascot {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	z-index: 100;
+	width: 120px;
+}
 
 .cat-speaking {
 	position: relative;
@@ -134,12 +135,13 @@ h2 {
 	max-width: 400px;
 	margin-left: 70px;
 	margin-bottom: 20px;
+
 }
 
 .speech-content {
 	position: absolute;
 	top: 0;
-	left: 50px;
+	left: 55px;
 	width: 80%;
 	height: 100%;
 	display: flex;
@@ -156,37 +158,215 @@ h2 {
 	font-family: "Rancho", cursive, serif;
 	font-size: 17px;
 	line-height: 1.2;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+	text-align: center;
 }
 
-/*.welcome-page,*/
-.about-page,
+
+.welcome-page,
+/*.about-page,*/
 .cat-speaking,
-.share,
-.video-container {
+.video-container,
+.share {
 	display: none;
 }
 
-
 @media (min-width:768px) {
 	.welcome-page {
-		text-align: left;
-		margin: 200px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-height: 100vh;
+		padding: 40px 20px;
+		position: relative;
+	}
+
+	.welcome-heading {
+		padding-left: 40px;
 	}
 
 	h1 {
 		font-size: 80px;
+		text-align: left;
 	}
 
 	h2 {
 		font-size: 60px;
+		text-align: left;
+		margin-left: 90px;
 	}
 
 	.welcome-cat {
-		max-width: 30%;
+		width: 400px;
 		height: auto;
-		margin-top: -130px;
+		position: relative;
+		right: 300px;
+		bottom: 450px;
+	}
 
+	.header-title {
+		font-family: rancho, serif;
+		font-size: 50px;
+	}
+
+	.about-button {
+		font-size: 30px;
+		border: none;
+		padding: 8px 20px;
+	}
+
+	.about-button-cat {
+		width: 30px;
+		height: 30px;
+	}
+
+	.control-buttons img {
+		width: 50px;
+		height: 50px;
+	}
+
+	iframe {
+		width: 595px;
+		height: 1057px;
+	}
+
+	.about-page p {
+		font-size: 27px;
+	}
+
+	.mascot {
+		width: 150px;
+	}
+
+	.cat-speaking {
+		position: relative;
+		bottom: -100px;
+		right: 100px;
+		max-width: 80%;
+		margin: 20px auto;
+	}
+
+	.speech-bubble {
+		position: relative;
+		max-width: 500px;
+		bottom: 200px;
+
+	}
+
+	.speech-content {
+		position: absolute;
+		left: 10px;
+		width: 65%;
+		height: 40%;
+	}
+
+	.speech-content p {
+		font-size: 23px;
+	}
+
+	.welcome-page,
+	/*.about-page,*/
+	.cat-speaking,
+	.video-container,
+	.share {
+		display: none;
 	}
 }
 
-@media (min-width:1024px) {}
+@media (min-width:1024px) {
+	.site-header {
+		position: absolute;
+		width: 100%;
+	}
+
+	.welcome-page {
+		display: flex;
+	}
+
+	.welcome-heading {
+		padding-left: 60px;
+	}
+
+	h2 {
+		margin-left: 50px;
+	}
+
+	.welcome-cat {
+		bottom: 500px;
+	}
+
+	.header-title {
+		font-size: 60px;
+	}
+
+	.about-button {
+		font-size: 40px;
+	}
+
+	.about-button-cat {
+		width: 40px;
+		height: 40px;
+	}
+
+	.control-buttons img {
+		width: 60px;
+		height: 60px;
+	}
+
+	iframe {
+		width: 468px;
+		height: 832px;
+		position: absolute;
+	}
+
+
+	.about-page {
+		max-width 90%;
+		margin: 0 auto;
+		padding: 20px;
+		background-color: #FBEFEF;
+		/* about page will run into header, solve it and change the value of cat speaking bubble */
+	}
+
+	.mascot {
+		width: 150px;
+	}
+
+	.cat-speaking {
+		position: relative;
+		bottom: -100px;
+		right: 100px;
+		max-width: 80%;
+		margin: 20px auto;
+	}
+
+	.speech-bubble {
+		position: relative;
+		max-width: 500px;
+		bottom: 200px;
+
+	}
+
+	.speech-content {
+		position: absolute;
+		left: 10px;
+		width: 65%;
+		height: 40%;
+	}
+
+	.speech-content p {
+		font-size: 23px;
+	}
+
+	.welcome-page,
+	/*.about-page,*/
+	.cat-speaking,
+	.video-container,
+	.share {
+		display: none;
+	}
+}
