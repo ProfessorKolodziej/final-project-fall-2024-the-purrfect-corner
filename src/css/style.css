@@ -12,6 +12,7 @@ body {
 .welcome-page {
 	text-align: center;
 	width: 100%;
+	transition: opacity 0.5s ease;
 }
 
 .welcome-heading {
@@ -37,6 +38,16 @@ h2 {
 	height: auto;
 	margin-top: -130px;
 
+}
+
+.video-page {
+	display: none;
+}
+
+.hide {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.5s ease;
 }
 
 .site-header {
@@ -122,34 +133,31 @@ iframe {
 
 .cat-speaking {
 	position: relative;
-	bottom: -100px;
+	padding-bottom: 200px;
 	right: 100px;
 	max-width: 80%;
 	margin: 20px auto;
 }
 
+.bubble-container {
+	position: relative;
+	width: 100%;
+}
+
 .speech-bubble {
 	position: relative;
-	left: -20%;
 	width: 100%;
-	max-width: 400px;
-	margin-left: 70px;
-	margin-bottom: 20px;
-
+	max-width: 500px;
+	height: auto;
+	margin: 0 auto;
 }
 
 .speech-content {
 	position: absolute;
-	top: 0;
-	left: 55px;
-	width: 80%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 10% 15%;
-	box-sizing: border-box;
+	top: 33%;
+	left: 35%;
+	transform: translate (-50%, -50%);
+	width: 42%;
 	text-align: center;
 }
 
@@ -158,17 +166,11 @@ iframe {
 	font-family: "Rancho", cursive, serif;
 	font-size: 17px;
 	line-height: 1.2;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	box-sizing: border-box;
-	text-align: center;
 }
 
 
-.welcome-page,
-/*.about-page,*/
+/*.welcome-page,*/
+.about-page,
 .cat-speaking,
 .video-container,
 .share {
@@ -243,25 +245,20 @@ iframe {
 	}
 
 	.cat-speaking {
-		position: relative;
-		bottom: -100px;
-		right: 100px;
-		max-width: 80%;
-		margin: 20px auto;
+		padding-bottom: 250px;
+		right: 50px;
+		max-width: 90%
 	}
 
 	.speech-bubble {
-		position: relative;
-		max-width: 500px;
-		bottom: 200px;
-
+		max-width: 550px;
+		bottom: 150px;
 	}
 
 	.speech-content {
-		position: absolute;
-		left: 10px;
-		width: 65%;
-		height: 40%;
+		top: 20%;
+		left: 22%;
+		width: 40%;
 	}
 
 	.speech-content p {
@@ -269,9 +266,9 @@ iframe {
 	}
 
 	.welcome-page,
-	/*.about-page,*/
-	.cat-speaking,
-	.video-container,
+	.about-page,
+	/*.cat-speaking,*/
+	/*.video-container,*/
 	.share {
 		display: none;
 	}
@@ -279,7 +276,6 @@ iframe {
 
 @media (min-width:1024px) {
 	.site-header {
-		position: absolute;
 		width: 100%;
 	}
 
@@ -321,6 +317,8 @@ iframe {
 		width: 468px;
 		height: 832px;
 		position: absolute;
+		transform: translateY(-190px);
+		;
 	}
 
 
@@ -329,7 +327,6 @@ iframe {
 		margin: 0 auto;
 		padding: 20px;
 		background-color: #FBEFEF;
-		/* about page will run into header, solve it and change the value of cat speaking bubble */
 	}
 
 	.mascot {
@@ -337,33 +334,29 @@ iframe {
 	}
 
 	.cat-speaking {
-		position: relative;
-		bottom: -100px;
-		right: 100px;
-		max-width: 80%;
-		margin: 20px auto;
+		padding-bottom: 300px;
+		right: 0;
+		max-width: 1000px;
 	}
 
 	.speech-bubble {
-		position: relative;
-		max-width: 500px;
-		bottom: 200px;
-
+		max-width: 650px;
+		bottom: 250px;
+		right: 350px;
 	}
 
 	.speech-content {
-		position: absolute;
-		left: 10px;
-		width: 65%;
-		height: 40%;
+		top: 10%;
+		left: -150px;
+		width: 30%;
 	}
 
 	.speech-content p {
-		font-size: 23px;
+		font-size: 25px;
 	}
 
-	.welcome-page,
-	/*.about-page,*/
+	/*.welcome-page,*/
+	.about-page,
 	.cat-speaking,
 	.video-container,
 	.share {
