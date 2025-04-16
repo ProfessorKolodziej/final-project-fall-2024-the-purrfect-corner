@@ -8,60 +8,114 @@
 
 
 const welcomePageElement = document.querySelector('.welcome-page');
-//const videoPage = document.querySelector('.video-page');
+const videoPageElement = document.querySelector('.video-page');
+const videoContainer = document.querySelector('.video-container');
 
-function toggleWelcomePage() {
-	welcomePageElement.classList.toggle('hide');
-	console.log("My toggle function");
-	console.log(welcomePageElement);
+function switchPages() {
+	welcomePageElement.style.opacity = '0';
+	setTimeout(function () {
+		welcomePageElement.style.display = 'none';
+		videoPageElement.style.display = 'block';
+	}, 500);
+
+	console.log('Welcome page hidden, video page shown');
 }
 
-welcomePageElement.addEventListener('click', function () {
-	toggleWelcomePage();
-});
+welcomePageElement.addEventListener('click', switchPages);
 
-//call the function to hide
-welcomePage();
+const iframe = document.querySelector('.video-container iframe');
 
-//call the function to show
-welcomePage();
+const videoIds = [
+	'1074050648',
+	'1075130900',
+	'1075131880',
+	'1075132111',
+	'1075132286',
+	'1075132453',
+	'1075132534',
+	'1075132620',
+	'1075132670',
+	'1075132750',
+	'1075132923',
+	'1075133071',
+	'1075133215',
+	'1075133361',
+	'1075133438'
+];
 
-//const player = new Vimeo.Player(iframe);
+let currentVideoIndex = 0;
+
+const player = new Vimeo.Player(iframe);
 
 player.on('play', function () {
 	console.log('Played the video');
 });
 
-//player.getVideoTitle().then(function (title) {
-console.log('title:', title);
-//});
+player.getVideoTitle().then(function (title) {
+	console.log('title:', title);
+});
 
-const videos = [
-	{ id: "1074050648", title: "Cat1" },
-	{ id: "1075130900", title: "Cat2" },
-	{ id: "1075131880", title: "Cat3" },
-	{ id: "1075132111", title: "Cat4" },
-	{ id: "1075132286", title: "Cat5" },
-	{ id: "1075132453", title: "Cat6" },
-	{ id: "1075132534", title: "Cat7" },
-	{ id: "1075132620", title: "Cat8" },
-	{ id: "1075132670", title: "Cat9" },
-	{ id: "1075132750", title: "Cat10" },
-	{ id: "1075132923", title: "Cat11" },
-	{ id: "1075133071", title: "Cat12" },
-	{ id: "1075133215", title: "Cat13" },
-	{ id: "1075133361", title: "Cat14" },
-	{ id: "1075133438", title: "Cat15" }
-]
+player.on('ended', function () {
+	currentVideoIndex = (currentVideoIndex + 1) % videoIds.length;
 
-let lastPlayedIndex = -1;
+	loadVideo(videoIds[currentVideoIndex]);
+})
 
-function loadRandomVideo() {
-	let randomIndex;
+function loadVideo(videoId) {
+	player.loadVideo(videoId).then(function () {
+		player.play();
+	}).catch(function (error) {
+		console.error('Error loading video:', error);
+	});
 }
 
-const iframe = document.querySelector('.video-container');
-container.innerHTML = '';
-container.appendChild(iframe);
+//up&down bottons
+const upButton = document.querySelector('.control-buttons img[alt="up"]');
+const downButton = document.querySelector('.control-buttons img[alt="down"]');
+const shareButton = document.querySelector('.control-buttons img[alt="share"]');
 
-window.addEventListener('DOMContentLoaded', loadRandomVideo);
+upButton.addEventListener('click', function () {
+	currentVideoIndex = (currentVideoIndex - 1 + videoIds.length) % videoIds.length;
+	loadVideo(videoIds[currentVideoIndex]);
+	console.log('Playing previous video, index:', currentVideoIndex);
+});
+
+downButton.addEventListener('click', function () {
+	currentVideoIndex = (currentVideoIndex + 1) % videoIds.length;
+	loadVideo(videoIds[currentVideoIndex]);
+	console.log('Playing next video, index:', currentVideoIndex);
+});
+
+//sound buttons
+const backgroundMusic = document.getElementById('backgroundMusic');
+const soundButton = document.querySelector('.control-buttons img[alt="sound"]');
+
+let isMusicPlaying = true;
+
+soundButton.addEventListener('click', function () {
+	if (isMusicPlaying) {
+		backgroundMusic.pause();
+		isMusicPlaying = false;
+		soundButton.src = 'images/button no sound.png';
+	} else {
+		backgroundMusic.play()
+			.then(() => {
+				isMusicPlaying = true;
+				soundButton.src = 'images/button sound on.png';
+			})
+			.catch(error => {
+				console.error('Error playing background music:', error);
+			});
+	}
+});
+
+
+
+//let lastPlayedIndex = -1;
+
+//function loadRandomVideo() {let randomIndex;}
+
+//container.innerHTML = '';
+//container.appendChild(iframe);
+
+//window.addEventListener('DOMContentLoaded', loadRandomVideo);

@@ -40,10 +40,6 @@ h2 {
 
 }
 
-.video-page {
-	display: none;
-}
-
 .hide {
 	opacity: 0;
 	pointer-events: none;
@@ -106,7 +102,7 @@ iframe {
 }
 
 .about-page {
-	max-width 90%;
+	max-width: 90%;
 	margin: 0 auto;
 	padding: 20px;
 	background-color: #FBEFEF;
@@ -168,14 +164,27 @@ iframe {
 	line-height: 1.2;
 }
 
+.welcome-page.hide {
+	display: none;
+	transition: opacity 0.5s ease;
+}
 
-/*.welcome-page,*/
+.video-page {
+	display: none;
+}
+
+.video-page.show {
+	display: block;
+}
+
+/*.welcome-page.*/
 .about-page,
 .cat-speaking,
-.video-container,
+/*.video-container,*/
 .share {
 	display: none;
 }
+
 
 @media (min-width:768px) {
 	.welcome-page {
@@ -192,7 +201,7 @@ iframe {
 	}
 
 	h1 {
-		font-size: 80px;
+		font-size: 60px;
 		text-align: left;
 	}
 
@@ -265,13 +274,6 @@ iframe {
 		font-size: 23px;
 	}
 
-	.welcome-page,
-	.about-page,
-	/*.cat-speaking,*/
-	/*.video-container,*/
-	.share {
-		display: none;
-	}
 }
 
 @media (min-width:1024px) {
@@ -285,6 +287,10 @@ iframe {
 
 	.welcome-heading {
 		padding-left: 60px;
+	}
+
+	h1 {
+		font-size: 70px;
 	}
 
 	h2 {
@@ -323,7 +329,7 @@ iframe {
 
 
 	.about-page {
-		max-width 90%;
+		max-width: 90%;
 		margin: 0 auto;
 		padding: 20px;
 		background-color: #FBEFEF;
@@ -355,11 +361,4 @@ iframe {
 		font-size: 25px;
 	}
 
-	/*.welcome-page,*/
-	.about-page,
-	.cat-speaking,
-	.video-container,
-	.share {
-		display: none;
-	}
 }
