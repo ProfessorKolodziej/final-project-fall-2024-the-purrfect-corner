@@ -65,6 +65,7 @@ h2 {
 	display: flex;
 	align-items: center;
 	gap: 8px;
+	cursor: pointer;
 }
 
 .about-button-cat {
@@ -79,6 +80,7 @@ h2 {
 	position: fixed;
 	right: 30px;
 	top: 60%;
+	cursor: pointer;
 }
 
 .control-buttons img {
@@ -103,13 +105,38 @@ iframe {
 
 .about-page {
 	max-width: 90%;
+	width: 90%;
 	margin: 0 auto;
 	padding: 20px;
 	background-color: #FBEFEF;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	max-height: 80vh;
+	overflow-y: auto;
+}
+
+.back-button {
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	background-color: #9FADF5;
+	border: none;
+	border-radius: 20px;
+	padding: 8px 15px;
+	transition: background-color 0.2s;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	cursor: pointer;
 }
 
 .about-heading {
 	text-align: center;
+	font-size: 30px;
 }
 
 .about-page p {
@@ -125,43 +152,63 @@ iframe {
 	left: 20px;
 	z-index: 100;
 	width: 120px;
+	cursor: pointer;
 }
 
 .cat-speaking {
-	position: relative;
-	padding-bottom: 200px;
-	right: 100px;
+	position: fixed;
+	bottom: -50px;
+	left: -10px;
+	z-index: 100;
 	max-width: 80%;
-	margin: 20px auto;
+	margin: 0;
 }
 
 .bubble-container {
-	position: relative;
-	width: 100%;
+	position: absolute;
+	bottom: 180px;
+	left: 60px;
+	width: 250px;
 }
 
 .speech-bubble {
-	position: relative;
-	width: 100%;
-	max-width: 500px;
-	height: auto;
-	margin: 0 auto;
+	position: absolute;
+	bottom: 120px;
+	left: 60px;
+	width: 300px;
 }
 
 .speech-content {
-	position: absolute;
-	top: 33%;
-	left: 35%;
-	transform: translate (-50%, -50%);
-	width: 42%;
+	background-color: white;
+	border-radius: 50%;
+	padding: 30px;
+	position: relative;
 	text-align: center;
+	width: 265px;
 }
 
 .speech-content p {
 	margin: 5px 0;
 	font-family: "Rancho", cursive, serif;
-	font-size: 17px;
+	font-size: 20px;
 	line-height: 1.2;
+}
+
+.sleep-button {
+	position: absolute;
+	top: 5px;
+	right: -10px;
+	background-color: #9FADF5;
+	border-radius: 50%;
+	padding: 12px;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+	transform: rotate(15deg);
+	cursor: pointer;
+	transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .welcome-page.hide {
@@ -177,14 +224,9 @@ iframe {
 	display: block;
 }
 
-/*.welcome-page.*/
-.about-page,
-.cat-speaking,
-/*.video-container,*/
 .share {
 	display: none;
 }
-
 
 @media (min-width:768px) {
 	.welcome-page {
@@ -207,7 +249,7 @@ iframe {
 
 	h2 {
 		font-size: 60px;
-		text-align: left;
+		text-align: center;
 		margin-left: 90px;
 	}
 
@@ -245,8 +287,16 @@ iframe {
 		height: 1057px;
 	}
 
+	.back-button {
+		font-size: 18px;
+	}
+
+	.about-heading {
+		font-size: 40px;
+	}
+
 	.about-page p {
-		font-size: 27px;
+		font-size: 23px;
 	}
 
 	.mascot {
@@ -254,26 +304,29 @@ iframe {
 	}
 
 	.cat-speaking {
-		padding-bottom: 250px;
-		right: 50px;
-		max-width: 90%
+		bottom: -40px;
+	}
+
+	.bubble-container {
+		width: 300px;
+		left: 80px;
+		bottom: 210px;
 	}
 
 	.speech-bubble {
-		max-width: 550px;
 		bottom: 150px;
+		left: 80px;
+		width: 350px;
 	}
 
 	.speech-content {
-		top: 20%;
-		left: 22%;
-		width: 40%;
+		padding: 35px;
+		width: 315px;
 	}
 
 	.speech-content p {
 		font-size: 23px;
 	}
-
 }
 
 @media (min-width:1024px) {
@@ -327,7 +380,6 @@ iframe {
 		;
 	}
 
-
 	.about-page {
 		max-width: 90%;
 		margin: 0 auto;
@@ -335,26 +387,41 @@ iframe {
 		background-color: #FBEFEF;
 	}
 
+	.back-button {
+		font-size: 20px;
+	}
+
+	.about-heading {
+		font-size: 45px;
+	}
+
+	.about-page p {
+		font-size: 25px;
+	}
+
 	.mascot {
-		width: 150px;
+		width: 180px;
 	}
 
 	.cat-speaking {
-		padding-bottom: 300px;
-		right: 0;
-		max-width: 1000px;
+		bottom: -70px;
+	}
+
+	.bubble-container {
+		width: 350px;
+		left: 100px;
+		bottom: 270px;
 	}
 
 	.speech-bubble {
-		max-width: 650px;
-		bottom: 250px;
-		right: 350px;
+		bottom: 180px;
+		left: 100px;
+		width: 400px;
 	}
 
 	.speech-content {
-		top: 10%;
-		left: -150px;
-		width: 30%;
+		padding: 40px;
+		width: 365px;
 	}
 
 	.speech-content p {
