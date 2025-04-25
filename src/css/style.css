@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Knewave&family=Rancho&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -16,19 +17,15 @@ body {
 }
 
 .welcome-heading {
-	display: block;
-	line-height: 1.2;
-
-}
-
-h1 {
 	font-family: rancho, serif;
 	font-size: 50px;
 	align-items: center;
-	color: var(--color-primary);
+	display: block;
+	line-height: 1.2;
 }
 
-h2 {
+.welcome-subheading {
+	padding: 10px;
 	font-family: rancho, serif;
 	font-size: 40px;
 }
@@ -68,6 +65,12 @@ h2 {
 	align-items: center;
 	gap: 8px;
 	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.about-button:hover {
+	background-color: #8a98e0;
+	transform: scale(1.05);
 }
 
 .about-button-cat {
@@ -88,6 +91,11 @@ h2 {
 .control-buttons img {
 	width: 45px;
 	height: 45px;
+	transition: all 0.2s ease;
+}
+
+.control-buttons img:hover {
+	transform: scale(1.15);
 }
 
 .video-container {
@@ -136,6 +144,11 @@ iframe {
 	cursor: pointer;
 }
 
+.back-button:hover {
+	background-color: #8a98e0;
+	transform: scale(1.05);
+}
+
 .about-heading {
 	text-align: center;
 	font-size: 30px;
@@ -155,6 +168,11 @@ iframe {
 	z-index: 100;
 	width: 120px;
 	cursor: pointer;
+}
+
+.mascot:hover {
+	transform: translateY(-10px) rotate(-5deg);
+	filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.3));
 }
 
 .cat-speaking {
@@ -191,12 +209,17 @@ iframe {
 
 .speech-content p {
 	margin: 5px 0;
-	font-family: "Rancho", cursive, serif;
-	font-size: 20px;
+	font-family: "Rubik", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 15.5px;
 	line-height: 1.2;
 }
 
 .sleep-button {
+	font-family: "Rubik", sans-serif;
+	font-weight: 400;
+	font-size: 15px;
 	position: absolute;
 	top: 5px;
 	right: -10px;
@@ -211,6 +234,10 @@ iframe {
 	transform: rotate(15deg);
 	cursor: pointer;
 	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.sleep-button:hover {
+	transform: scale(1.1);
 }
 
 .welcome-page.hide {
@@ -229,21 +256,24 @@ iframe {
 
 @media (min-width:768px) {
 	.welcome-page {
-		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		justify-content: center;
+		gap: 5%;
 		align-items: center;
-		min-height: 100vh;
-		padding: 40px 20px;
-		position: relative;
+		padding: 0 40px;
 	}
 
 	.welcome-heading {
 		padding-left: 40px;
+		font-size: 60px;
+		text-align: left;
+		margin-left: 20%;
 	}
 
 	h1 {
 		font-size: 60px;
 		text-align: left;
+		margin-right: 20px;
 	}
 
 	h2 {
@@ -253,11 +283,11 @@ iframe {
 	}
 
 	.welcome-cat {
-		width: 400px;
-		height: auto;
-		position: relative;
-		right: 300px;
-		bottom: 450px;
+		position: absolute;
+		left: 40px;
+		top: 150px;
+		width: 40%;
+		max-width: 380px;
 	}
 
 	.header-title {
@@ -334,7 +364,13 @@ iframe {
 	}
 
 	.speech-content p {
-		font-size: 23px;
+		font-size: 18.7px;
+	}
+
+	.sleep-button {
+		font-size: 17px;
+		width: 65px;
+		height: 65px;
 	}
 }
 
@@ -440,7 +476,12 @@ iframe {
 	}
 
 	.speech-content p {
-		font-size: 25px;
+		font-size: 21.7px;
 	}
 
+	.sleep-button {
+		font-size: 20px;
+		width: 70px;
+		height: 70px;
+	}
 }
