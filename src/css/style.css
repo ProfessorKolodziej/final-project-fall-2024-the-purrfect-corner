@@ -49,6 +49,8 @@ h2 {
 .site-header {
 	display: flex;
 	justify-content: space-between;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .header-title {
@@ -79,7 +81,7 @@ h2 {
 	gap: 20px;
 	position: fixed;
 	right: 30px;
-	top: 60%;
+	top: 70%;
 	cursor: pointer;
 }
 
@@ -224,9 +226,6 @@ iframe {
 	display: block;
 }
 
-.share {
-	display: none;
-}
 
 @media (min-width:768px) {
 	.welcome-page {
@@ -269,12 +268,22 @@ iframe {
 	.about-button {
 		font-size: 30px;
 		border: none;
-		padding: 8px 20px;
+		padding: 15px 25px;
+		border-radius: 30px;
+		height: fit-content;
+		line-height: 1.1;
+		margin-top: 40px;
+		position: relative;
 	}
 
 	.about-button-cat {
 		width: 30px;
 		height: 30px;
+	}
+
+	.control-buttons {
+		right: 40px;
+		top: 68%;
 	}
 
 	.control-buttons img {
@@ -359,12 +368,18 @@ iframe {
 	}
 
 	.about-button {
-		font-size: 40px;
+		font-size: 35px;
+		border-radius: 40px;
 	}
 
 	.about-button-cat {
 		width: 40px;
 		height: 40px;
+	}
+
+	.control-buttons {
+		right: 60px;
+		top: 63%;
 	}
 
 	.control-buttons img {
