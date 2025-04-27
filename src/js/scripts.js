@@ -7,6 +7,7 @@
 // - You'll need to link this file to your HTML :)
 
 
+//Open page
 const welcomePageElement = document.querySelector('.welcome-page');
 const videoPageElement = document.querySelector('.video-page');
 const videoContainer = document.querySelector('.video-container');
@@ -21,6 +22,7 @@ function switchPages() {
 	console.log('Welcome page hidden, video page shown');
 }
 
+//Videos
 welcomePageElement.addEventListener('click', switchPages);
 
 const iframe = document.querySelector('.video-container iframe');
@@ -44,7 +46,6 @@ const videoIds = [
 ];
 
 let currentVideoIndex = 0;
-
 const player = new Vimeo.Player(iframe);
 
 player.on('play', function () {
@@ -57,36 +58,34 @@ player.getVideoTitle().then(function (title) {
 
 player.on('ended', function () {
 	currentVideoIndex = (currentVideoIndex + 1) % videoIds.length;
-
 	loadVideo(videoIds[currentVideoIndex]);
-})
+});
 
 function loadVideo(videoId) {
-	player.loadVideo(videoId).then(function () {
-		player.play();
-	}).catch(function (error) {
-		console.error('Error loading video:', error);
-	});
+	player.loadVideo(videoId)
+		.then(function () {
+			player.play();
+		})
+		.catch(function (error) {
+			console.error('Error loading video:', error);
+		});
 }
 
-//up & down bottons
+//Up & down bottons
 const upButton = document.querySelector('.control-buttons img[alt="up"]');
 const downButton = document.querySelector('.control-buttons img[alt="down"]');
-const shareButton = document.querySelector('.control-buttons img[alt="share"]');
 
 upButton.addEventListener('click', function () {
 	currentVideoIndex = (currentVideoIndex - 1 + videoIds.length) % videoIds.length;
 	loadVideo(videoIds[currentVideoIndex]);
-	console.log('Playing previous video, index:', currentVideoIndex);
 });
 
 downButton.addEventListener('click', function () {
 	currentVideoIndex = (currentVideoIndex + 1) % videoIds.length;
 	loadVideo(videoIds[currentVideoIndex]);
-	console.log('Playing next video, index:', currentVideoIndex);
 });
 
-//sound buttons
+//Sound buttons
 const backgroundMusic = document.getElementById('backgroundMusic');
 const soundButton = document.querySelector('.control-buttons img[alt="sound"]');
 
@@ -113,7 +112,7 @@ soundButton.addEventListener('click', function () {
 	}
 });
 
-//about button
+//About button
 const aboutButton = document.querySelector('.about-button');
 const aboutSection = document.querySelector('.about-page');
 const backButton = document.querySelector('.back-button');
@@ -130,7 +129,7 @@ backButton.addEventListener('click', function () {
 	aboutSection.style.display = 'none';
 });
 
-//mascot talking & sleep
+//Mascot talking & sleep
 const bb2Image = document.querySelector('section img.mascot[src="images/BB2.png"]');
 const bb2Section = bb2Image.parentElement;
 const catSpeakingSection = document.querySelector('.cat-speaking');
@@ -151,14 +150,3 @@ sleepButton.addEventListener('click', function () {
 	catSpeakingSection.style.display = 'none';
 	bb2Section.style.display = 'block';
 });
-
-
-
-//let lastPlayedIndex = -1;
-
-//function loadRandomVideo() {let randomIndex;}
-
-//container.innerHTML = '';
-//container.appendChild(iframe);
-
-//window.addEventListener('DOMContentLoaded', loadRandomVideo);
