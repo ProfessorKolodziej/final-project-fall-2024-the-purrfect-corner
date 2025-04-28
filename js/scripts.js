@@ -92,14 +92,14 @@ const soundButton = document.querySelector('.control-buttons img[alt="sound"]');
 let isMusicPlaying = false;
 
 document.addEventListener('DOMContentLoaded', function () {
-	soundButton.src = 'images/button no sound.png';
+	soundButton.src = 'images/button sound off.png';
 })
 
 soundButton.addEventListener('click', function () {
 	if (isMusicPlaying) {
 		backgroundMusic.pause();
 		isMusicPlaying = false;
-		soundButton.src = 'images/button no sound.png';
+		soundButton.src = 'images/button sound off.png';
 	} else {
 		backgroundMusic.play()
 			.then(() => {
