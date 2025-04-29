@@ -29,21 +29,22 @@ const iframe = document.querySelector('.video-container iframe');
 
 const videoIds = [
 	'1074050648',
-	'1075130900',
+	'1075132534',
 	'1075131880',
 	'1075132111',
+	'1075133215',
 	'1075132286',
 	'1075132453',
-	'1075132534',
 	'1075132620',
 	'1075132670',
+	'1075130900',
 	'1075132750',
 	'1075132923',
 	'1075133071',
-	'1075133215',
 	'1075133361',
 	'1075133438'
 ];
+
 
 let currentVideoIndex = 0;
 const player = new Vimeo.Player(iframe);
@@ -84,6 +85,7 @@ downButton.addEventListener('click', function () {
 	currentVideoIndex = (currentVideoIndex + 1) % videoIds.length;
 	loadVideo(videoIds[currentVideoIndex]);
 });
+
 
 //Sound buttons
 const backgroundMusic = document.getElementById('backgroundMusic');

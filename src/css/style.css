@@ -82,6 +82,7 @@ body {
 	width: 90%;
 	margin: 0 auto;
 	padding: 20px;
+	padding-bottom: 50px;
 	background-color: #FBEFEF;
 	position: fixed;
 	top: 50%;
@@ -103,7 +104,13 @@ body {
 	font-family: "Nunito", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
-	padding: 12px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.song-credit {
+	font-family: "Nunito", sans-serif;
+	font-size: 300;
 }
 
 .back-button {
@@ -313,7 +320,7 @@ iframe {
 
 	.about-page p {
 		font-size: 20px;
-		padding: 15px;
+		padding: 5px;
 	}
 
 	.back-button {
@@ -419,7 +426,6 @@ iframe {
 
 	.about-page p {
 		font-size: 23px;
-		padding: 15px;
 	}
 
 	.back-button {
