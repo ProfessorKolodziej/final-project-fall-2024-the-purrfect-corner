@@ -8,7 +8,7 @@ The Purrfect Corner is your cozy digital nook for nonstop cat joy.
 
 - [CM523 Final Project Guidelines &amp; Schedule](https://docs.google.com/document/d/1gvG9_1XYfp5-BVUgCDL9JDaZ3Acm6hHP7lDF3MqXPzY/edit#heading=h.61wsleacz62i)
 - **Final code demo:** https://professorkolodziej.github.io/final-project-fall-2024-the-purrfect-corner/
-- Slide link: https://docs.google.com/presentation/d/1A_6nHy_iaI3k41Kj03c7v3oJsStGNrPS80tscn1xGRg/edit?usp=sharing
+- **Slide link**: https://docs.google.com/presentation/d/1A_6nHy_iaI3k41Kj03c7v3oJsStGNrPS80tscn1xGRg/edit?usp=sharing
 
 ## How to Use This Repository
 
