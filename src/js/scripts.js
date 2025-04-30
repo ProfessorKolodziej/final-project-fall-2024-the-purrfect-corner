@@ -22,7 +22,7 @@ function switchPages() {
 	console.log('Welcome page hidden, video page shown');
 }
 
-//Videos
+//Videos setting
 welcomePageElement.addEventListener('click', switchPages);
 
 const iframe = document.querySelector('.video-container iframe');
@@ -44,7 +44,6 @@ const videoIds = [
 	'1075133361',
 	'1075133438'
 ];
-
 
 let currentVideoIndex = 0;
 const player = new Vimeo.Player(iframe);

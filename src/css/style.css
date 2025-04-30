@@ -31,9 +31,15 @@ body {
 }
 
 .welcome-cat {
-	max-width: 100%;
+	max-width: 68%;
 	height: auto;
-	margin-top: -130px;
+	margin-top: -50px;
+	cursor: pointer;
+}
+
+.welcome-cat:hover {
+	transform: scale(1.05);
+	filter: drop-shadow(0 0 10px rgb(255, 252, 228));
 }
 
 .hide {
@@ -63,6 +69,10 @@ body {
 	display: flex;
 	align-items: center;
 	gap: 8px;
+	border: none;
+	height: fit-content;
+	line-height: 1.1;
+	margin-top: 15px;
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
@@ -262,35 +272,17 @@ iframe {
 }
 
 @media (min-width:768px) {
-	.welcome-page {
-		justify-content: center;
-		align-items: center;
-		padding: 40px 20px;
-		margin-top: 40px;
-		gap: 40px;
-	}
-
 	.welcome-heading {
-		font-size: 60px;
-		text-align: left;
-		padding-left: 40px;
-		margin-left: 20%;
-		padding: 10px;
+		font-size: 55px;
 	}
 
 	.welcome-subheading {
-		font-size: 60px;
-		text-align: center;
-		margin-left: 20px;
-		right: 80%;
+		font-size: 45px;
 	}
 
 	.welcome-cat {
-		position: absolute;
-		left: 40px;
-		top: 150px;
-		width: 40%;
-		max-width: 380px;
+		max-width: 40%;
+		margin-top: -100px;
 	}
 
 	.header-title {
@@ -300,11 +292,7 @@ iframe {
 
 	.about-button {
 		font-size: 30px;
-		border: none;
 		padding: 15px 25px;
-		border-radius: 30px;
-		height: fit-content;
-		line-height: 1.1;
 		margin-top: 40px;
 		position: relative;
 	}
@@ -318,9 +306,15 @@ iframe {
 		font-size: 38px;
 	}
 
+	.about-page {
+		max-width: 80%;
+		width: 80%;
+	}
+
 	.about-page p {
 		font-size: 20px;
 		padding: 5px;
+		margin-bottom: 15px;
 	}
 
 	.back-button {
@@ -329,7 +323,7 @@ iframe {
 
 	iframe {
 		width: 595px;
-		height: 1057px;
+		height: 768px;
 	}
 
 	.control-buttons {
@@ -379,24 +373,21 @@ iframe {
 }
 
 @media (min-width:1024px) {
-	.site-header {
-		width: 100%;
-	}
-
 	.welcome-heading {
-		font-size: 70px;
-	}
-
-	.welcome-subheading {
 		font-size: 60px;
 	}
 
+	.welcome-subheading {
+		font-size: 50px;
+	}
+
 	.welcome-cat {
-		position: absolute;
-		left: 15%;
-		top: 150px;
-		width: 30%;
+		width: 65%;
 		max-width: 400px;
+	}
+
+	.site-header {
+		width: 100%;
 	}
 
 	.header-title {
@@ -414,10 +405,10 @@ iframe {
 	}
 
 	.about-page {
-		max-width: 90%;
+		max-width: 70%;
+		width: 70%;
 		margin: 0 auto;
 		padding: 20px;
-		background-color: #FBEFEF;
 	}
 
 	.about-heading {
@@ -426,6 +417,7 @@ iframe {
 
 	.about-page p {
 		font-size: 23px;
+		margin-bottom: 20px;
 	}
 
 	.back-button {
